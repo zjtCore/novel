@@ -93,6 +93,5 @@ git status
     只需执行 
     git add . 
     git commit -m "啦啦啦" 
-    
-    git push 四个步骤
+    git push 三个步骤
 ```
