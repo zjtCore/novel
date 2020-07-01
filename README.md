@@ -87,4 +87,11 @@ git commit -m 'first commit'
 ```
 git status 
 ```
-如果以后再次上传的话 可以忽略 1 4两个步骤 第六个步骤中不用再次登录 第五个最后不要省略
+####如果以后再次上传的话 
+```
+    只需执行 
+    git add . 
+    git commit -m "啦啦啦" 
+    git pull --rebase origin master   (不知道为什么我一定要执行这一句 不然会提交失败)
+    git push 四个步骤
+```
