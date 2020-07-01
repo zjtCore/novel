@@ -87,11 +87,12 @@ git commit -m 'first commit'
 ```
 git status 
 ```
-####如果以后再次上传的话 
+
+### 如果以后再次上传的话 
 ```
     只需执行 
     git add . 
     git commit -m "啦啦啦" 
-    git pull --rebase origin master   (不知道为什么我一定要执行这一句 不然会提交失败)
+    
     git push 四个步骤
 ```
