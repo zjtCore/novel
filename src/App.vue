@@ -2,9 +2,9 @@
 	<div id="app">
 		<div id="header">当当小说网</div>
 		<transition mode="out-in">
-<!--			<div id="main">-->
-				<router-view id="main"></router-view>
-<!--			</div>-->
+			<!--			<div id="main">-->
+			<router-view id="main"></router-view>
+			<!--			</div>-->
 		</transition>
 		<main-tab-bar></main-tab-bar>
 
@@ -24,23 +24,24 @@
 	@import "assets/css/normalize.css";
 	@import "assets/css/base.css";
 
-		#header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-			height: 80/50rem;
-			text-align: center;
-			line-height: 80/50rem;
-			font-size: 40/50rem;
-		}
+	#header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 80/50rem;
+		text-align: center;
+		line-height: 80/50rem;
+		font-size: 40/50rem;
+	}
 
-		#main {
-      margin-top: 80/50rem;
-      width: 100%;
-			border:1px solid green;
-			height: calc(100vh - 3.6rem);
-		}
+	#main {
+		padding: 5px;
+		margin-top: 80/50rem;
+		width: 100%;
+		height: calc(100vh - 3.6rem);
+		overflow: auto;
+	}
 
 	.v-enter{
 		opacity: 0;

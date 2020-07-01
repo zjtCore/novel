@@ -1,18 +1,36 @@
 <template>
 	<div id="home">
-		<h1>主页</h1>
-		<h2>{{$store.state.counter}}</h2>
-		<button @click="aa">显示</button>
+				<Swiper :banner="banners"></Swiper>
+
 	</div>
 </template>
 
 <script>
+	// 加载网络请求
+	import {getHomeData} from "../../networks/home";
 
+	//加载组件
+	import Swiper from "../../components/swiper/Swiper";
 	export default {
 		name: "Home",
+		data(){
+			return{
+				banners:[]
+			}
+		},
+		components:{
+			Swiper
+		},
+		created(){
+				this.getHomeDataM()
+		},
 		methods:{
-			aa:function(){
-				this.$mytoast.toastShow("我们都是好朋友不许说话不许动",5000)
+			getHomeDataM(){
+				getHomeData().then(res=>{
+					let data = res.data.data;
+					console.log(data);
+					this.banners = data.banners
+				})
 			}
 		}
 	}

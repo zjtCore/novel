@@ -50,6 +50,7 @@
 		font-size: 24/50rem;
 		text-align: center;
 		color: gray;
+		line-height: normal;
 		img {
 			width: 40/50rem;
 			height: 40/50rem;

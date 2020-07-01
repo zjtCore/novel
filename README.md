@@ -95,3 +95,28 @@ git status
     git commit -m "啦啦啦" 
     git push 三个步骤
 ```
+
+### vuecli中使用mui框架
+注意 晚上有很多教程都很复杂 我用的是cli4 我是多次结合网上的教程试出来的
+######  
+```
+    1 先下载好mui的相关文件 放置到项目的src目录中
+
+    2 在main js 中引入mui.css mui.js如下 路径仅供参考
+    import "./lib/mui/css/mui.min.css"
+    import "./lib/mui/js/mui.min"
+
+    3 在vue的原型中添加mui 以便全局使用
+    Vue.prototype.$mui = mui;
+
+    4 以上基本可以用了 需要在vue生命周期mounted时使用 但是我使用
+    mui的轮播时 mui里关于轮播的js代码需要在updated生命周期里使用才有效
+    具体原因不知道 以后等级高了再来探讨吧
+    
+    5使用mui轮播时也有bug 
+    1 mui里的轮播html里 需要多定义最后一张图片 和第一张图片 再进行for循环
+      但是最后一张图片 和第一张图片 尽然无法直接将ajax里获取的数据动态的写进去
+      这边实在是找不出来 先写死吧
+    2 mui轮播里的小点 也无法根据ajax里轮播图片的个数动态写进去 这里也是先写死的
+    
+```
