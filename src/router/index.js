@@ -1,27 +1,44 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import vue from "vue"
+import VueRouter from "vue-router";
 
-Vue.use(VueRouter)
+//懒加载路由
+const home = ()=>import("../views/home/Home");
+const category = ()=>import("../views/category/Category");
+const cart = ()=>import("../views/cart/Cart");
+const me = ()=>import("../views/me/Me");
 
-  const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
-]
+//解决路由重复点击报错的问题
+const originalPush = VueRouter.prototype.replace;
+VueRouter.prototype.replace = function replace(location) {
+	return originalPush.call(this, location).catch(err => err)
+}
 
+vue.use(VueRouter)
+
+const routes = [
+	{
+		path:"/",
+		redirect:"/home"
+	},
+	{
+		path:"/home",
+		component:home
+	},
+	{
+		path:"/category",
+		component:category
+	},
+	{
+		path:"/cart",
+		component:cart
+	},
+	{
+		path:"/me",
+		component:me
+	}
+];
 const router = new VueRouter({
-  routes
+	mode:"hash",
+	routes
 })
-
 export default router
