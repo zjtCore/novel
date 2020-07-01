@@ -87,5 +87,4 @@ git commit -m 'first commit'
 ```
 git status 
 ```
-
-测试一下
+如果以后再次上传的话 可以忽略 1 4两个步骤 第六个步骤中不用再次登录
