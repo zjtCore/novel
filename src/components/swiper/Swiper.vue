@@ -41,9 +41,6 @@
 				// lastImg:""
 			}
 		},
-		mounted(){
-			this.$mui.alert("哈哈哈哈")
-		},
 		updated() {
 			this.$mui.init({
 				swipeBack:true //启用右滑关闭功能

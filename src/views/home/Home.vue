@@ -1,7 +1,9 @@
 <template>
 	<div id="home">
-				<Swiper :banner="banners"></Swiper>
-
+				<!--轮播-->
+				<swiper :banner="banners"></swiper>
+				<!--推荐分类		-->
+				<recommend ></recommend>
 	</div>
 </template>
 
@@ -11,6 +13,7 @@
 
 	//加载组件
 	import Swiper from "../../components/swiper/Swiper";
+	import Recommend from "../../components/recommend/Recommend";
 	export default {
 		name: "Home",
 		data(){
@@ -19,7 +22,8 @@
 			}
 		},
 		components:{
-			Swiper
+			Swiper,
+			Recommend
 		},
 		created(){
 				this.getHomeDataM()

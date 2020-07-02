@@ -3,7 +3,10 @@
 		<div id="header">当当小说网</div>
 		<transition mode="out-in">
 			<!--			<div id="main">-->
-			<router-view id="main"></router-view>
+			<keep-alive>
+				<router-view id="main"></router-view>
+			</keep-alive>
+
 			<!--			</div>-->
 		</transition>
 		<main-tab-bar></main-tab-bar>
@@ -32,7 +35,12 @@
 		height: 80/50rem;
 		text-align: center;
 		line-height: 80/50rem;
-		font-size: 40/50rem;
+		font-size: 32/50rem;
+		/*background-color: rgba(31,194,255,.3) ;*/
+		background-image: linear-gradient(#10a1e6, #38ccff);
+		font-weight: 600;
+		font-family: "微软雅黑";
+		color: white;
 	}
 
 	#main {

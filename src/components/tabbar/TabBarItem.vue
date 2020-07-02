@@ -47,14 +47,14 @@
 	.tab_bar_item{
 		flex: 1;
 		padding-top: 10/50rem;
-		font-size: 24/50rem;
+		font-size: 20/50rem;
 		text-align: center;
 		color: gray;
 		line-height: normal;
 		img {
 			width: 40/50rem;
 			height: 40/50rem;
-			margin-bottom: 6/50rem;
+			margin-bottom: 3/50rem;
 		}
 	}
 </style>
