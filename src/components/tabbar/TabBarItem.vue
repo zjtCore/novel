@@ -54,7 +54,8 @@
 		img {
 			width: 40/50rem;
 			height: 40/50rem;
-			margin-bottom: 3/50rem;
+			/*border: 1px solid darkgrey;*/
+			margin-bottom: 5/50rem;
 		}
 	}
 </style>

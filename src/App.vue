@@ -1,6 +1,6 @@
 <template>
 	<div id="app">
-		<div id="header">当当小说网</div>
+
 		<transition mode="out-in">
 			<!--			<div id="main">-->
 			<keep-alive>
@@ -51,18 +51,20 @@
 		overflow: auto;
 	}
 
-	.v-enter{
-		opacity: 0;
-		transform: translateX(100%);
-	}
-	.v-leave-to{
-		opacity: 0;
-		transform: translateX(-100%);
-	}
-	.v-enter-active,
-	.v-leave-active{
-		transition: all 0.5s ease;
-	}
+	/*.v-enter{*/
+	/*	opacity: 0;*/
+	/*	transform: translateX(100%);*/
+	/*}*/
+	/*.v-leave-to{*/
+	/*	opacity: 0;*/
+	/*	transform: translateX(-100%);*/
+
+	/*}*/
+	/*.v-enter-active,*/
+	/*.v-leave-active{*/
+	/*	transition-property: transform,opacity;*/
+	/*	!*transition-duration:1s;*!*/
+	/*}*/
 
 
 

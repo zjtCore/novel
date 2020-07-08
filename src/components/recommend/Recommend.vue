@@ -37,14 +37,14 @@
 	padding: 10/50rem 0px;
 	background-color: white;
 	border-radius: 5px;
-	box-shadow: 0px 0px 1px black;
+	box-shadow: 0px 0px 1px gray;
 	h2{
 		font-size: 32/50rem;
 		text-align: center;
 	}
 	.recommends{
 		width: 100%;
-		height: 300/50rem;
+		height: 250/50rem;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-around;
