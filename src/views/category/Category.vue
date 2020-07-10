@@ -1,12 +1,18 @@
 <template>
 	<div id="category">
-		<h1>分类</h1>
+		<nav-bar>
+			<div slot="center">小说分类</div>
+		</nav-bar>
 	</div>
 </template>
 
 <script>
+	import NavBar from "../../components/navbar/NavBar";
 	export default {
-		name: "Category"
+		name: "Category",
+		components:{
+			NavBar
+		}
 	}
 </script>
 

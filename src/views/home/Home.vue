@@ -1,7 +1,10 @@
 <template>
 	<div id="home">
 <!--		<h2>{{$store.state.books}}</h2>-->
-		<div id="header">当当小说网</div>
+		<nav-bar>
+			<div slot="center">当当小说网</div>
+		</nav-bar>
+
 		<!--轮播-->
 		<swiper :banner="banners"></swiper>
 		<!--推荐分类		-->
@@ -22,6 +25,7 @@
 	import {getHomeData} from "../../networks/home";
 
 	//加载组件
+	import NavBar from "../../components/navbar/NavBar";
 	import Swiper from "../../components/swiper/Swiper";
 	import Recommend from "../../components/recommend/Recommend";
 	import TabControl from "../../components/tabControl/TabControl";
@@ -46,6 +50,7 @@
 			}
 		},
 		components: {
+			NavBar,
 			Swiper,
 			Recommend,
 			TabControl,
