@@ -58,7 +58,16 @@
 		},
 		created() {
 			this.getHomeDataM();
-
+			// if(this.$store.state.isLogin==false){
+			// if(this.$store.state.users===""){
+			// 	this.$mytoast.show("请进行登录",2000)
+			// 	let _this = this;
+			// 	setTimeout(()=>{
+			// 		_this.$router.push("/login")
+			// 	},3000)
+			//
+			// }
+			// }
 		},
 		mounted(){
 			this.$store.dispatch('getHomeDataA')

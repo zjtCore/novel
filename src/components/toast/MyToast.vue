@@ -14,7 +14,7 @@
 			}
 		},
 		methods:{
-			toastShow(message,duration = 3000){
+			show(message,duration = 3000){
 					this.isShow = true;
 					this.message = message;
 					setTimeout(()=>{

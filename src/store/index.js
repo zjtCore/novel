@@ -7,12 +7,24 @@ import {getHomeData} from "../networks/home";
 export default new Vuex.Store({
   state: {
     counter:"哈哈哈",
-    books:[]
+    books:[],
+    users:"",
+    isLogin:false,
+    shoppingInfo:[]
   },
   mutations: {
     getData(state,payload){
       state.books = payload
-    }
+    },
+    getUser(state,user){
+      state.users = user;
+    },
+    getIsLogin(state,isLogin){
+      state.isLogin = isLogin;
+    },
+    // getShoppingInfo(state,shoppingInfo){
+    //   state.shoppingInfo.push(shoppingInfo);
+    // }
   },
   actions: {
     getHomeDataA({commit,state}){

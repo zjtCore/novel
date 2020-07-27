@@ -15,7 +15,7 @@
 		<hr>
 		<book-list class="book-list" :books="books"></book-list>
 		<hr>
-     <detail-bottom-bar></detail-bottom-bar>
+     <detail-bottom-bar :book-detail="bookDetail"></detail-bottom-bar>
 	</div>
 </template>
 

@@ -58,17 +58,21 @@
 			margin-left: 10%;
 		}
 		.author{
-			font-size: 28/50rem;
+			font-size: 26/50rem;
+			padding: 10/50rem;
 			margin: 0;
 		}
 		.desc{
 			font-size: 26/50rem;
-			padding: 5/50rem 0px 8/50rem 0px;
+			height: 50/50rem;
+			line-height:50/50rem ;
 			max-width: 100%;
 			white-space: nowrap;
 			overflow: hidden;
 			text-overflow: ellipsis;
 			margin: 0;
+			padding: 0;
+
 		}
 		.book-price{
 			font-size: 24/50rem;

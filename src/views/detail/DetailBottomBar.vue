@@ -12,7 +12,7 @@
 			<img src="../../assets/img/detail/collect.png" alt=""><br>
 			<span>收藏</span>
 		</div>
-		<div class="detail-bottom-bar-item">
+		<div class="detail-bottom-bar-item" @click="addShopping">
 			加入购物车
 		</div>
 		<div class="detail-bottom-bar-item">
@@ -22,8 +22,27 @@
 </template>
 
 <script>
+	import {addShopping} from "../../networks/home";
+
 	export default {
-		name: "DetailBottomBar"
+		name: "DetailBottomBar",
+		props:{
+			bookDetail:{
+				type:Object,
+				default(){
+					return {}
+				}
+			}
+		},
+		methods:{
+			addShopping(){
+				console.log(this.bookDetail)
+				addShopping(this.bookDetail.imgSrc,this.bookDetail.desc,this.bookDetail.price,1).then(res=>{
+					this.$mytoast.show("添加成功",3000)
+				})
+
+			}
+		}
 	}
 </script>
 

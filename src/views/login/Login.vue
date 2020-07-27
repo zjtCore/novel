@@ -8,16 +8,16 @@
 				<form id='login-form' class="mui-input-group">
 					<div class="mui-input-row">
 						<label>账号</label>
-						<input id='account' type="text" class="mui-input-clear mui-input" placeholder="请输入账号">
+						<input ref="account" type="text" class="mui-input-clear mui-input" placeholder="请输入账号">
 					</div>
 					<div class="mui-input-row">
 						<label>密码</label>
-						<input id='password' type="password" class="mui-input-clear mui-input" placeholder="请输入密码">
+						<input ref="password" type="password" class="mui-input-clear mui-input" placeholder="请输入密码">
 					</div>
 				</form>
 				<div class="mui-content-padded">
-					<button type="button" class="mui-btn mui-btn-block mui-btn-primary">登录</button>
-					<div class="link-area"><a @click="reg">注册账号</a> <span class="spliter">|</span> <a id='forgetPassword' @click="login">游客登录</a>
+					<button @click="toLogin" type="button" class="mui-btn mui-btn-block mui-btn-primary">登录</button>
+					<div class="link-area"><a @click="reg">注册账号</a> <span class="spliter">|</span> <a id='forgetPassword' @click="toHome">游客登录</a>
 					</div>
 				</div>
 				<div class="mui-content-padded oauth-area">
@@ -30,14 +30,31 @@
 </template>
 
 <script>
+	import {login} from "../../networks/home";
 	export default {
 		name: "Login",
 		methods:{
-			login(){
+			toHome(){
+				this.$mytoast.show("欢迎游客小韭菜登录",3000)
 				this.$router.push("/home")
 			},
 			reg(){
 				this.$router.push("/reg")
+			},
+			toLogin(){
+				let account = this.$refs.account.value;
+				let password = this.$refs.password.value;
+				login(account,password).then(res=>{
+					let data = res.data;
+					if(data.status==="0"){
+						this.$mytoast.show(data.msg+account,3000)
+						this.$store.commit("getUser",account);
+						this.$store.commit("getIsLogin",true)
+						this.$router.push("/home")
+					}else{
+						this.$mytoast.show(account+data.msg,5000)
+					}
+				})
 			}
 		}
 	}

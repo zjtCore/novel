@@ -10,7 +10,9 @@
 			</div>
 			<div class="info-item binding-info">
 				<div>
-					<a href="javascript:;">登录/注册</a>
+
+					<a v-if="isLogin" href="javascript:;" class="user">{{$store.state.users}}</a>
+					<a v-else href="javascript:;" class="user">小韭菜</a>
 				</div>
 				<div class="banding-phone">
 					<a href="javascript:;">
@@ -20,7 +22,7 @@
 				</div>
 			</div>
 			<div class="info-item back">
-				<img  src="../../assets/img/back.png" alt="">
+				<img src="../../assets/img/back.png" alt="">
 			</div>
 		</div>
 		<div class="account">
@@ -56,6 +58,7 @@
 		name: "Me",
 		data(){
 			return{
+				isLogin:false,
 				listViewData1:[
 					{iconClass:"mui-icon mui-icon-chat",iconColor:"gray",text:"我的消息"},
 					{iconClass:"mui-icon mui-icon-starhalf",iconColor:"red",text:"积分商城"},
@@ -67,9 +70,15 @@
 				]
 			}
 		},
+		created(){
+			console.log("create")
+			this.isLogin = this.$store.state.isLogin;
+		},
 		components:{
 			NavBar,
 			ListView
+		},
+		methods:{
 		}
 	}
 </script>
@@ -110,9 +119,16 @@
 		position: relative;
 		flex: 2;
 		padding: 10/50rem;
+		.user{
+			font-size: 50/50rem;
+		}
 		.banding-phone{
 			position: absolute;
 			bottom: 0px;
+
+
+
+
 			span{
 				font-size: 28/50rem;
 			}

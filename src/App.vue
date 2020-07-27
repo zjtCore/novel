@@ -3,7 +3,7 @@
 
 <!--		<transition mode="out-in">-->
 
-			<keep-alive>
+			<keep-alive exclude="Cart">
 				<router-view id="main"></router-view>
 			</keep-alive>
 
@@ -47,8 +47,4 @@
 		transition-property: transform,opacity;
 		transition-duration:1s;
 	}
-
-
-
-
 </style>
