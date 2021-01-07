@@ -2,7 +2,7 @@
 	<div id="home">
 <!--		<h2>{{$store.state.books}}</h2>-->
 		<nav-bar>
-			<div slot="center">当当小说网</div>
+			<div slot="center">当啦啦啦小说网</div>
 		</nav-bar>
 
 		<!--轮播-->
